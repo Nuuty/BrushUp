@@ -7,7 +7,7 @@ using System.Xml.Schema;
 
 namespace ClassLibrary1
 {
-    class Teacher : Person
+    public class Teacher : Person
     {
         private Gender gender;
 
@@ -21,13 +21,11 @@ namespace ClassLibrary1
 
         public Teacher(string name, string address, Gender gender, int salary)
         {
-
-            if (!CheckName(name))
+            if (CheckName(name))
             {
                 Name = name;
             }
-
-            if (!CheckAddress(address))
+            if (CheckAddress(address))
             {
                 Address = address;
             }

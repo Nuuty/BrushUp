@@ -16,8 +16,8 @@ namespace ClassLibrary1
             get { return name; }
             set
             {
-                if (CheckName(value)) return;
-                name = value;
+                if (CheckName(value))
+                    name = value;
             }
         }
 
@@ -28,7 +28,7 @@ namespace ClassLibrary1
             get { return address; }
             set
             {
-                if (CheckAddress(value)) return;
+                if (CheckAddress(value))
                 address = value;
             }
         }
@@ -40,7 +40,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool CheckAddress(string value)
         {
-            if (!String.IsNullOrEmpty(value)) return false;
+            if (String.IsNullOrEmpty(value)) return false;
             return true;
         }
 
@@ -51,8 +51,8 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool CheckName(string value)
         {
-            if (value.Length < 2) return true;
-            return false;
+            if (value.Length < 2) return false;
+            return true;
         }
 
         public override string ToString()

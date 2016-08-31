@@ -16,7 +16,7 @@ namespace ClassLibrary1
             get { return semester; }
             set
             {
-                if (CheckSemester(value)) return;
+                if (CheckSemester(value))
                 semester = value;
             }
         }
@@ -25,17 +25,15 @@ namespace ClassLibrary1
 
         public Student(string name, string address, int semester, Gender gender)
         {
-            if (!CheckName(name))
+            if (CheckName(name))
             {
                 Name = name;
             }
-
-            if (!CheckAddress(address))
+            if (CheckAddress(address))
             {
                 Address = address;
             }
-
-            if (!CheckSemester(semester))
+            if (CheckSemester(semester))
             {
                 Semester = semester;
             }
@@ -49,8 +47,8 @@ namespace ClassLibrary1
         /// <returns></returns>
         private bool CheckSemester(int value)
         {
-            if (value < 1 || value > 8) return true;
-            return false;
+            if (value < 1 || value > 8) return false;
+            return true;
         }
 
         public override string ToString()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Sockets;
 using ClassLibrary1;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,9 +19,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestSetName()
         {
-            // Arrange
-
-
             // Act
             Student.Name = "N";
 
@@ -30,9 +28,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestSetAddressNull()
         {
-            // Arrange
-
-
             // Act
             Student.Address = null;
 
@@ -42,9 +37,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestSetAddressEmpty()
         {
-            // Arrange
-
-
             // Act
             Student.Address = "";
 
@@ -54,9 +46,6 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestSetSemester()
         {
-            // Arrange
-
-
             // Act
             Student.Semester = 9;
 
@@ -67,47 +56,31 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestForCheckingNameLength()
         {
-            // Arrange
-            
-
-            // Act
-
-
-            // Assert
             Assert.AreNotEqual("N",Student.Name);
         }
         [TestMethod]
         public void TestForCheckingIfAddressIsNotNull()
         {
-            // Arrange
-
-
-            // Act
-
-            // Assert
             Assert.IsNotNull(Student.Address);
         }
         [TestMethod]
         public void TestForCheckingIfAddressIsNotEmpty()
         {
-            // Arrange
-
-            // Act
-
-            // Assert
             Assert.AreNotEqual("", Student.Address);
         }
         [TestMethod]
         public void TestForCheckingIfSemesterIsLegal()
         {
-            // Arrange
-
-            // Act
-
-            // Assert
             Assert.AreNotEqual(9, Student.Semester);
         }
 
+        [TestMethod]
+        public void TestTeacherName()
+        {
+            Teacher teacher = new Teacher("N","Elisagårdsvej 5",Gender.Male,19000);
+            
+            Assert.AreNotEqual("N",teacher.Name);
+        }
 
     }
 }
